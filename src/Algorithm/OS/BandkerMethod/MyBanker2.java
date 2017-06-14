@@ -2,25 +2,11 @@ package Algorithm.OS.BandkerMethod;
 
 /**
  * Created by Administrator on 2017/6/14.
- *系统中有3种类型的资源A B C和5个进程P1、P2、P3、P4、P5 A资源的数量为17 B资源的数量为5 C资源的数量为20。在T0时刻系统状态见下表T0时刻系统状态表所示。系统采用银行家算法实施死锁避免策略。
- 最大资源需求量    已分配资源数量
- A    B    C     A    B    C
- P1   5    5    9     2    1    2
- P2   5    3    6     4    0    2
- P3   4    0    11    4    0    5
- P4   4    2    5     2    0    4
- P5   4    2    4     3    1    4
- T0时刻系统状态表
-
- (1)T0时刻是否为安全状态,若是请给出安全序列。
- (2)在T0时刻若进程P2请求资源0 3 4 是否能实施资源分配，为什么？
- (3)在(2)的基础上 若进程P4请求资源2 0 1 是否能实施资源分配，为什么？
- (4)在(3)的基础上 若进程P1请求资源0 2 0 是否能实施资源分配，为什么？
  */
 
 import java.util.Scanner;
 
-public class MyBanker {
+public class MyBanker2 {
     int threadNum = 5;
     int sourceNum = 3;
 
@@ -46,14 +32,22 @@ public class MyBanker {
         }
     }
 
-    boolean change(int inRequestNum, int inRequest[]) {//分配数据
+    boolean change(int inRequestNum, int inRequest[], int inRequestNum2, int inRequest2[]) {//分配数据
         int requestNum = inRequestNum;
+        int requestNum2 = inRequestNum2;
         int request[] = inRequest;
+        int request2[] = inRequest2;
         if (!(request[0] <= need[requestNum][0] && request[1] <= need[requestNum][1] && request[2] <= need[requestNum][2])) {
             System.out.println("请求的资源数超过了所需要的最大值，分配错误");
             return false;
         }
-        if ((request[0] <= available[0] && request[1] <= available[1] && request[2] <= available[2]) == false) {
+
+        if (!(request2[0] <= need[requestNum2][0] && request2[1] <= need[requestNum2][1] && request2[2] <= need[requestNum2][2])) {
+            System.out.println("请求的资源数超过了所需要的最大值，分配错误");
+            return false;
+        }
+
+        if ((request[0] + request2[0] <= available[0] && request[1] + request2[1] <= available[1] && request[2] + request2[2] <= available[2]) == false) {
             System.out.println("尚无足够资源分配，必须等待");
             return false;
         }
@@ -61,6 +55,10 @@ public class MyBanker {
             available[i] = available[i] - request[i];
             allocation[requestNum][i] = allocation[requestNum][i] + request[i];
             need[requestNum][i] = need[requestNum][i] - request[i];
+
+            available[i] = available[i] - request2[i];
+            allocation[requestNum2][i] = allocation[requestNum2][i] + request2[i];
+            need[requestNum2][i] = need[requestNum2][i] - request2[i];
         }
         boolean flag = checkSafe(available[0], available[1], available[2]);//进行安全性检查并返回是否安全
         if (flag == true) {
@@ -72,6 +70,10 @@ public class MyBanker {
                 available[i] = available[i] + request[i];
                 allocation[requestNum][i] = allocation[requestNum][i] - request[i];
                 need[requestNum][i] = need[requestNum][i] + request[i];
+
+                available[i] = available[i] + request2[i];
+                allocation[requestNum2][i] = allocation[requestNum2][i] - request2[i];
+                need[requestNum2][i] = need[requestNum2][i] + request2[i];
             }
             return false;
         }
@@ -102,10 +104,11 @@ public class MyBanker {
     }
 
     public static void main(String[] args) {
-        MyBanker bank = new MyBanker();
+        MyBanker2 bank = new MyBanker2();
         bank.showData();
         int request[] = new int[3];
-        int requestNum;
+        int request2[] = new int[3];
+        int requestNum, requestNum2;
         String source[] = new String[]{"A", "B", "C"};
         Scanner s = new Scanner(System.in);
         String choice = new String();
@@ -117,7 +120,16 @@ public class MyBanker {
                 System.out.println(source[i] + "资源的数目：");
                 request[i] = s.nextInt();
             }
-            bank.change(requestNum, request);
+
+            System.out.println("请输入要请求的进程号（0--4）：");
+            requestNum2 = s.nextInt();
+            System.out.print("请输入请求的资源数目");
+            for (int i = 0; i < bank.sourceNum; i++) {
+                System.out.println(source[i] + "资源的数目：");
+                request2[i] = s.nextInt();
+            }
+
+            bank.change(requestNum, request, requestNum2, request2);
             System.out.println("是否再请求分配(y/n)");
             choice = s.next();
             if (choice.equals("n")) break;
