@@ -1,7 +1,7 @@
 package Algorithm.Problems;
 
 /**
- * Created by Administrator on 2017/6/13.
+ * Created by Administrator on 2017/6/13.0
  */
 import java.util.Arrays;
 
