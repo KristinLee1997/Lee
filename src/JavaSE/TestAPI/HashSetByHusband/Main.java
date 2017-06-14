@@ -111,7 +111,7 @@ interface ª≠Õºπ§æﬂ1{
     void ±ﬂøÚ();
 }
 
-class A implements ª≠Õºπ§æﬂ1{
+class ReplacementMothod implements ª≠Õºπ§æﬂ1{
 
     @Override
     public void ∞¥≈•() {
@@ -175,7 +175,7 @@ class B extends ª≠Õºπ§æﬂ2{
 
 /*
 
-class A extends Animal implements ≥‘,≈‹,≈¿,”Œ”æ{
+class ReplacementMothod extends Animal implements ≥‘,≈‹,≈¿,”Œ”æ{
 
 }
 

@@ -20,7 +20,7 @@ public class MyBanker2 {
 
     void showData() {//展示数据输出每个进程的相关数据
         System.out.println("进程号\t\tMax\t\t\tAllocation\t\t\tNeed");
-        System.out.println("\t\tA\tB\tC\t\tA\tB\tC\t\tA\tB\tC\n");
+        System.out.println("\t\tReplacementMothod\tB\tC\t\tReplacementMothod\tB\tC\t\tReplacementMothod\tB\tC\n");
         for (int i = 0; i < threadNum; i++) {
             System.out.print(i + "\t\t");
             for (int m = 0; m < sourceNum; m++) System.out.print(max[i][m] + "\t");
@@ -109,7 +109,7 @@ public class MyBanker2 {
         int request[] = new int[3];
         int request2[] = new int[3];
         int requestNum, requestNum2;
-        String source[] = new String[]{"A", "B", "C"};
+        String source[] = new String[]{"ReplacementMothod", "B", "C"};
         Scanner s = new Scanner(System.in);
         String choice = new String();
         while (true) {//循环进行分配

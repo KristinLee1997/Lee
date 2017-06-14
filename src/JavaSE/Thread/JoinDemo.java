@@ -13,7 +13,7 @@ public class JoinDemo extends Thread {
     }
 
     public static void main(String[] args) {
-        new JoinDemo("A").start();
+        new JoinDemo("ReplacementMothod").start();
         for (int i = 0; i < 100; i++) {
             if (i == 20) {
                 JoinDemo jd = new JoinDemo("±»joinµ÷ÓÃ");

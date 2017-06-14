@@ -2,20 +2,20 @@ package Algorithm.OS.BandkerMethod;
 
 /**
  * Created by Administrator on 2017/6/14.
- *系统中有3种类型的资源A B C和5个进程P1、P2、P3、P4、P5 A资源的数量为17 B资源的数量为5 C资源的数量为20。在T0时刻系统状态见下表T0时刻系统状态表所示。系统采用银行家算法实施死锁避免策略。
- 最大资源需求量    已分配资源数量
- A    B    C     A    B    C
- P1   5    5    9     2    1    2
- P2   5    3    6     4    0    2
- P3   4    0    11    4    0    5
- P4   4    2    5     2    0    4
- P5   4    2    4     3    1    4
- T0时刻系统状态表
+ *系统中有3种类型的资源ReplacementMothod B C和5个进程P1、P2、P3、P4、P5 A资源的数量为17 B资源的数量为5 C资源的数量为20。在T0时刻系统状态见下表T0时刻系统状态表所示。系统采用银行家算法实施死锁避免策略。
+ *最大资源需求量    已分配资源数量
+ *ReplacementMothod    B    C     ReplacementMothod    B    C
+ *P1   5    5    9     2    1    2
+ *P2   5    3    6     4    0    2
+ *P3   4    0    11    4    0    5
+ *P4   4    2    5     2    0    4
+ *P5   4    2    4     3    1    4
+ *T0时刻系统状态表
 
- (1)T0时刻是否为安全状态,若是请给出安全序列。
- (2)在T0时刻若进程P2请求资源0 3 4 是否能实施资源分配，为什么？
- (3)在(2)的基础上 若进程P4请求资源2 0 1 是否能实施资源分配，为什么？
- (4)在(3)的基础上 若进程P1请求资源0 2 0 是否能实施资源分配，为什么？
+ *( 1)T0时刻是否为安全状态,若是请给出安全序列。
+ *(2)在T0时刻若进程P2请求资源0 3 4 是否能实施资源分配，为什么？
+ *(3)在(2)的基础上 若进程P4请求资源2 0 1 是否能实施资源分配，为什么？
+ *(4)在(3)的基础上 若进程P1请求资源0 2 0 是否能实施资源分配，为什么？
  */
 
 import java.util.Scanner;
@@ -34,7 +34,7 @@ public class MyBanker {
 
     void showData() {//展示数据输出每个进程的相关数据
         System.out.println("进程号\t\tMax\t\t\tAllocation\t\t\tNeed");
-        System.out.println("\t\tA\tB\tC\t\tA\tB\tC\t\tA\tB\tC\n");
+        System.out.println("\t\tReplacementMothod\tB\tC\t\tReplacementMothod\tB\tC\t\tReplacementMothod\tB\tC\n");
         for (int i = 0; i < threadNum; i++) {
             System.out.print(i + "\t\t");
             for (int m = 0; m < sourceNum; m++) System.out.print(max[i][m] + "\t");
@@ -106,7 +106,7 @@ public class MyBanker {
         bank.showData();
         int request[] = new int[3];
         int requestNum;
-        String source[] = new String[]{"A", "B", "C"};
+        String source[] = new String[]{"ReplacementMothod", "B", "C"};
         Scanner s = new Scanner(System.in);
         String choice = new String();
         while (true) {//循环进行分配

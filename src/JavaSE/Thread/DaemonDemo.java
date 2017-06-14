@@ -9,7 +9,7 @@ package JavaSE.Thread;
  */
 public class DaemonDemo extends Thread {
     public static void main(String[] args) {
-        DaemonThread d1 = new DaemonThread("A");
+        DaemonThread d1 = new DaemonThread("ReplacementMothod");
 
         d1.start();
         DaemonThread2 d2 = new DaemonThread2("B");
