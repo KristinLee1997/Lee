@@ -1,4 +1,4 @@
-package Train;
+package JavaSE.Train;
 
 import java.util.*;
 

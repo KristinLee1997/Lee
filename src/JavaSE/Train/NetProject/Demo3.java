@@ -1,4 +1,4 @@
-package Train.NetProject;
+package JavaSE.Train.NetProject;
 
 /**
  * Created by Administrator on 2017/5/23.
