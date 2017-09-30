@@ -11,7 +11,7 @@ public class Demo1 {
     public static void main(String[] args) {
         Demo1 d = new Demo1();
         try {
-            d.getStaticMethod();
+            d.getClass3();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -27,7 +27,7 @@ public class Demo1 {
     }
 
     public void getClass3() {
-        String classname = "JB.TestAPI.Reflect.Person";
+        String classname = "JavaSE.Reflect.Person";
         Class c = null;
         Object obj = null;
         try {
@@ -46,7 +46,7 @@ public class Demo1 {
     }
 
     public void getConsturctorDemo() throws Exception {
-        String classname = "JB.TestAPI.Reflect.Person";
+        String classname = "JavaSE.Reflect.Person";
         Class c = Class.forName(classname);
         Constructor con = c.getConstructor(String.class, int.class);
         Object obj = con.newInstance("lisi", 21);
@@ -54,7 +54,7 @@ public class Demo1 {
     }
 
     public void getField() throws Exception {
-        String classname = "JB.TestAPI.Reflect.Person";
+        String classname = "JavaSE.Reflect.Person";
         Class c = Class.forName(classname);
         String field = "age";
         Field f = c.getDeclaredField(field);
@@ -66,7 +66,7 @@ public class Demo1 {
     }
 
     public void getMethod() throws Exception {
-        String classname = "JB.TestAPI.Reflect.Person";
+        String classname = "JavaSE.Reflect.Person";
         Class c = Class.forName(classname);
         String methodName = "show";
         Method m = c.getMethod(methodName, String.class, int.class);
@@ -75,7 +75,7 @@ public class Demo1 {
     }
 
     public void getStaticMethod() throws Exception {
-        String classname = "JB.TestAPI.Reflect.Person";
+        String classname = "JavaSE.Reflect.Person";
         Class c = Class.forName(classname);
         String methodName = "staticShow";
         Method method = c.getMethod(methodName, null);
