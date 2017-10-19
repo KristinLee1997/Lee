@@ -1,3 +1,5 @@
+package Algorithm.Sort;
+
 /**
  * Created by king on 2017/4/6.
  */

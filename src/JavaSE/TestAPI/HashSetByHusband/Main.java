@@ -175,7 +175,7 @@ class B extends ª≠Õºπ§æﬂ2{
 
 /*
 
-class ReplacementMothod extends Animal implements ≥‘,≈‹,≈¿,”Œ”æ{
+class ReplacementMothod extends Dog implements ≥‘,≈‹,≈¿,”Œ”æ{
 
 }
 
