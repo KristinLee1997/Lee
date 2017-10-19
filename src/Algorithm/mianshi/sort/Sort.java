@@ -26,6 +26,9 @@ public class Sort {
         }
     }
 
+    public static void bubblesort2(){
+
+    }
 
 
     public static void selectsort(int[] num) { //—°‘Ò≈≈–Ú
