@@ -26,7 +26,7 @@ public class Sort {
         }
     }
 
-    public static void bubblesort2(){
+    public static void bubblesort2(int[] num){
 
     }
 

@@ -12,20 +12,20 @@ import java.sql.Statement;
 public class Jdbc_CURD {
     @Test
     public void test_update() throws Exception {
-        //¼ÓÔØÇı¶¯
+        //åŠ è½½é©±åŠ¨
         Class.forName("com.mysql.jdbc.Driver");
 
-        //»ñÈ¡Á¬½ÓConnection
+        //è·å–è¿æ¥Connection
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bz", "root", "root");
 
-        //»ñµÃÖ´ĞĞSqlµÄ¶ÔÏóStatement
+        //è·å¾—æ‰§è¡ŒSqlçš„å¯¹è±¡Statement
         Statement st = con.createStatement();
 
-        //Ö´ĞĞSQL
+        //æ‰§è¡ŒSQL
         int i = st.executeUpdate("update table1 set tab1_name=\"test\" where tab1_id=2");
-        System.out.println("¸ü¸ÄÁË" + i + "ĞĞ");
+        System.out.println("æ›´æ”¹äº†" + i + "è¡Œ");
 
-        //¹Ø±Õ×ÊÔ´
+        //å…³é—­èµ„æº
         st.close();
         con.close();
 
@@ -33,20 +33,20 @@ public class Jdbc_CURD {
 
     @Test
     public void test_delete() throws Exception {
-        //¼ÓÔØÇı¶¯
+        //åŠ è½½é©±åŠ¨
         Class.forName("com.mysql.jdbc.Driver");
 
-        //»ñÈ¡Á¬½ÓConnection
+        //è·å–è¿æ¥Connection
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bz", "root", "root");
 
-        //»ñµÃÖ´ĞĞSqlµÄ¶ÔÏóStatement
+        //è·å¾—æ‰§è¡ŒSqlçš„å¯¹è±¡Statement
         Statement st = con.createStatement();
 
-        //Ö´ĞĞSQL
+        //æ‰§è¡ŒSQL
         int i = st.executeUpdate("delete from table1 where tab1_id=2;");
-        System.out.println("É¾³ıÁË" + i + "ĞĞ");
+        System.out.println("åˆ é™¤äº†" + i + "è¡Œ");
 
-        //¹Ø±Õ×ÊÔ´
+        //å…³é—­èµ„æº
         st.close();
         con.close();
 

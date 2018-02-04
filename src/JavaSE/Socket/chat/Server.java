@@ -8,16 +8,16 @@ import java.net.Socket;
 
 /**
  * Created by Administrator on 2017/6/22.
- * -----------·şÎñÆ÷------------
- * -------------¿Í»§¶ËÏò·şÎñÆ÷·¢ËÍÏûÏ¢---------------
+ * -----------æœåŠ¡å™¨------------
+ * -------------å®¢æˆ·ç«¯å‘æœåŠ¡å™¨å‘é€æ¶ˆæ¯---------------
  */
 public class Server {
     public static void main(String[] args) throws IOException {
         ServerSocket server = new ServerSocket(4444);
-        System.out.println("·şÎñÆ÷×¼±¸ºÃÀ²");
+        System.out.println("æœåŠ¡å™¨å‡†å¤‡å¥½å•¦");
 
         Socket socket = server.accept();
-        System.out.println("·şÎñÆ÷Á¬½Ó³É¹¦");
+        System.out.println("æœåŠ¡å™¨è¿æ¥æˆåŠŸ");
 
         BufferedReader bf = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 

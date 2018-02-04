@@ -7,19 +7,19 @@ import java.sql.*;
  */
 public class Demo1 {
     public static void main(String[] args) throws SQLException {
-        //1.注册驱动
+        //1.娉ㄥ唽椹卞姩
         DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 
-        //2.建立连接
+        //2.寤虹珛杩炴帴
         Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/bz","root","root");
 
-        //3.获得执行SQL对象
+        //3.鑾峰緱鎵цSQL瀵硅薄
         Statement st=conn.createStatement();
 
-        //4.执行SQL语句
+        //4.鎵цSQL璇彞
         ResultSet rs=st.executeQuery("select * from orders");
 
-        //5.处理SQL语句
+        //5.澶勭悊SQL璇彞
         while(rs.next()){
             System.out.print(rs.getObject(1)+"\t");
             System.out.print(rs.getObject(2)+"\t");
@@ -27,7 +27,7 @@ public class Demo1 {
             System.out.println();
         }
 
-        //6.关闭资源
+        //6.鍏抽棴璧勬簮
         rs.close();
         st.close();
         conn.close();

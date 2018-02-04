@@ -6,7 +6,8 @@ package Algorithm.Sort;
 public class M1 {
     public static void main(String[] args) {
         int[] a = new int[]{8, 2, 1, 6, 3, 9, 5, 0, 4, 7};
-        shellSort(a);
+//        shellSort(a);
+        quickSort2(a,0,a.length-1);
         for (int i : a) System.out.printf("%d\t", i);
     }
 
@@ -109,23 +110,30 @@ public class M1 {
         }
     }
 
-    public static void quickSort1(int[] a, int start, int end) {
-        int i = start;
-        int j = end;
-        boolean b = true;
-        if (i >= j) return;
-        while (i < j) {
-            if (a[i] > a[j]) {
-                a[i] ^= a[j];
-                a[j] ^= a[i];
-                a[i] ^= a[j];
-            }
-            b = !b;
-            if (!b) i++;
-            else j--;
+    public static void quickSort1(int[] num, int low, int high) {
+        int i = low;
+        int j = high;
+        if (i >= j) {
+            return;
         }
-        quickSort1(a, start, i - 1);
-        quickSort1(a, j + 1, end);
+        boolean flag = true;
+        while (i != j) {
+            if (num[i] > num[j]) {
+                int t = num[i];
+                num[i] = num[j];
+                num[j] = t;
+                flag = (flag == true) ? false : true;
+            }
+            if (flag) {
+                j--;
+            } else {
+                i++;
+            }
+        }
+        i--;
+        j++;
+        quickSort1(num, low, i);
+        quickSort1(num, j, high);
     }
 
     public static void quickSort2(int[] a, int start, int end) {

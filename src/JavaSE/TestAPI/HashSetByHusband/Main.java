@@ -101,51 +101,51 @@ class CompareByLength implements Comparator {
 
 /*
 
-interface »­Í¼¹¤¾ß1{
-    void °´Å¥();
-    void »¬ÂÖ();
-    void »­°å();
-    void Ğ´×Ö°å();
-    void ²ÊÉ«±Ê();
-    void ±³¾°();
-    void ±ß¿ò();
+interface ç”»å›¾å·¥å…·1{
+    void æŒ‰é’®();
+    void æ»‘è½®();
+    void ç”»æ¿();
+    void å†™å­—æ¿();
+    void å½©è‰²ç¬”();
+    void èƒŒæ™¯();
+    void è¾¹æ¡†();
 }
 
-class ReplacementMothod implements »­Í¼¹¤¾ß1{
+class ReplacementMothod implements ç”»å›¾å·¥å…·1{
 
     @Override
-    public void °´Å¥() {
+    public void æŒ‰é’®() {
 
     }
 
     @Override
-    public void »¬ÂÖ() {
+    public void æ»‘è½®() {
 
     }
 
     @Override
-    public void »­°å() {
+    public void ç”»æ¿() {
 
     }
 
     @Override
-    public void Ğ´×Ö°å() {
+    public void å†™å­—æ¿() {
         init();
         use();
     }
 
     @Override
-    public void ²ÊÉ«±Ê() {
+    public void å½©è‰²ç¬”() {
 
     }
 
     @Override
-    public void ±³¾°() {
+    public void èƒŒæ™¯() {
         setBackGround(white);
     }
 
     @Override
-    public void ±ß¿ò() {
+    public void è¾¹æ¡†() {
 
     }
 }
@@ -153,29 +153,29 @@ class ReplacementMothod implements »­Í¼¹¤¾ß1{
 
 
 
-class »­Í¼¹¤¾ß2{
-    void °´Å¥(){}
-    void »¬ÂÖ(){}
-    void »­°å(){}
-    void Ğ´×Ö°å(){}
-    void ²ÊÉ«±Ê(){}
-    void ±³¾°(){}
-    void ±ß¿ò(){}
+class ç”»å›¾å·¥å…·2{
+    void æŒ‰é’®(){}
+    void æ»‘è½®(){}
+    void ç”»æ¿(){}
+    void å†™å­—æ¿(){}
+    void å½©è‰²ç¬”(){}
+    void èƒŒæ™¯(){}
+    void è¾¹æ¡†(){}
 }
 
-class B extends »­Í¼¹¤¾ß2{
-    public void Ğ´×Ö°å(){
+class B extends ç”»å›¾å·¥å…·2{
+    public void å†™å­—æ¿(){
         init();
         use();
     }
-    void ±³¾°(){
+    void èƒŒæ™¯(){
         setBackGround(white);
     }
 }*/
 
 /*
 
-class ReplacementMothod extends Dog implements ³Ô,ÅÜ,ÅÀ,ÓÎÓ¾{
+class ReplacementMothod extends Dog implements åƒ,è·‘,çˆ¬,æ¸¸æ³³{
 
 }
 
